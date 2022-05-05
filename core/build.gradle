@@ -28,15 +28,21 @@
 
 
 dependencies {
-//	implementation 'org.springframework.boot:spring-boot-starter'
-    implementation 'org.springframework.boot:spring-boot-starter'
+    api 'org.springframework.boot:spring-boot-starter'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	compileOnly 'org.projectlombok:lombok'
+	api 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+
+//    compileOnly 'org.springframework.boot:spring-boot-starter'
+//    compileOnly 'org.springframework.boot:spring-boot-starter-test'
+//    compileOnly 'org.projectlombok:lombok'
+//    annotationProcessor 'org.projectlombok:lombok'
 }
 
 bootJar { enabled = false }
 jar { enabled = true }
+
+
 //
 //tasks.named('test') {
 //	useJUnitPlatform()
