@@ -6,6 +6,6 @@ import javax.persistence.Id;
 @Entity
 public class CategoryEntity {
     @Id
-    private int id;
+    private Long id;
     private String name;
 }

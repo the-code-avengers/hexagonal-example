@@ -1,9 +1,14 @@
 package com.example.board.category.application;
 
 import com.example.board.category.application.port.in.CategoryUseCase;
+import com.example.board.category.application.port.out.LoadCategoryPort;
 import com.example.board.category.domain.Category;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
 public class CategoryService implements CategoryUseCase {
+
+    private final LoadCategoryPort loadCategoryPort;
 
     @Override
     public void useCase() {
@@ -11,5 +16,8 @@ public class CategoryService implements CategoryUseCase {
         category.logic();
 
         // db access
+        loadCategoryPort.persistenceLogic(category);
+
+        return;
     }
 }
