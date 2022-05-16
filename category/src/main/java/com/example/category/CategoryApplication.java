@@ -1,13 +1,13 @@
-package com.example.comment;
+package com.example.category;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CommentApplication {
+public class CategoryApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(CommentApplication.class, args);
+        SpringApplication.run(CategoryApplication.class, args);
     }
 
 }
