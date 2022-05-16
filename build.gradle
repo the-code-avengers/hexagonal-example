@@ -39,7 +39,7 @@ subprojects {
     }
 }
 
-project(':category') {
+project(':board') {
     dependencies {
         api project(':core')
     }
