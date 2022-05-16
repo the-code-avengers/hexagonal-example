@@ -7,7 +7,10 @@ jar {
 
 dependencies {
     api 'org.springframework.boot:spring-boot-starter'
+    api 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    api 'org.springframework.boot:spring-boot-starter-data-jpa'
+    api 'com.h2database:h2'
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	api 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
 }
