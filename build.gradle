@@ -10,12 +10,9 @@ buildscript {
         classpath "io.spring.gradle:dependency-management-plugin:1.0.11.RELEASE"
     }
 }
-dependencies {
-}
-
-
 
 allprojects {
+
 }
 
 subprojects {
@@ -50,10 +47,6 @@ subprojects {
         annotationProcessor "org.springframework.boot:spring-boot-configuration-processor"
 
         annotationProcessor 'org.projectlombok:lombok'
-
-
-
-
     }
 
     test {

@@ -1,21 +1,13 @@
 bootJar {
-    enabled = true
+    enabled = false
 }
 jar {
     enabled = true
 }
 
 dependencies {
+    api 'org.springframework.boot:spring-boot-starter'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
-    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
-    implementation 'mysql:mysql-connector-java'
-       implementation project(':adapter')
-    implementation project(':domain')
-
-}
-
-bootRun {
-    String activeProfile = System.properties['spring.profiles.active']
-    systemProperty "spring.profiles.active", activeProfile
+	api 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
 }
