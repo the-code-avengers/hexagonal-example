@@ -1,12 +1,12 @@
-package com.example.board.category.domain;
+package com.example.board.category.adapter.in.web;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 @Getter
+@Setter
 @RequiredArgsConstructor
-@AllArgsConstructor
-public class Category {
+public class CategoryRequest {
     private final String name;
 }

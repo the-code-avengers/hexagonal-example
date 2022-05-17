@@ -1,5 +1,7 @@
 package com.example.board.category.application.port.in;
 
+import com.example.board.category.adapter.in.web.CategoryResponse;
+
 public interface CategoryUseCase {
-    public void useCase();
+    CategoryResponse createUseCase(String categoryName);
 }
