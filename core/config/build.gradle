@@ -1,0 +1,21 @@
+bootJar {
+    enabled = true
+}
+jar {
+    enabled = true
+}
+
+dependencies {
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+    implementation 'mysql:mysql-connector-java'
+       implementation project(':adapter')
+    implementation project(':domain')
+
+}
+
+bootRun {
+    String activeProfile = System.properties['spring.profiles.active']
+    systemProperty "spring.profiles.active", activeProfile
+}
