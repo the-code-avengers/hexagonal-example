@@ -1,0 +1,23 @@
+server:
+  port: ${PORT:8080}
+
+mysql:
+  host: ${MYSQL_HOST:localhost}
+  port: ${MYSQL_PORT:3306}
+  schema: ${MYSQL_SCHEMA:local}
+  username: ${MYSQL_USERNAME:root}
+  password: ${MYSQL_PASSWORD:password}
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${mysql.host}:${mysql.port}/${mysql.schema}?
+    username: ${mysql.username}
+    password: ${mysql.password}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+      naming.physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
