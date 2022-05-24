@@ -26,10 +26,42 @@ target/
 /nbdist/
 /.nb-gradle/
 build/
+out/
+bin/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
 ### VS Code ###
 .vscode/
-
 .DS_Store
+
+### Intellij  ###
+.idea/*
+
+### Java ###
+# Compiled class file
+*.class
+*.log
+*.ctxt
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+### Gradle ###
+.gradle
+**/build/
+!src/**/build/
+
+gradle-app.setting
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+
+# Cache of project
+.gradletasknamecache
