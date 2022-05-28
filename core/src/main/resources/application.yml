@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    hikari:
+      jdbc-url: jdbc:h2:mem:testdb
+      username: sa
+      password: password
+      driver-class-name: org.h2.Driver
+  jpa:
+    database: h2
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+    show-sql: true
+    generate-ddl: true
+    hibernate.ddl-auto: create
+    hibernate:
+      dialect: org.hibernate.dialect.H2Dialect
+    properties.hibernate.dialect: org.hibernate.dialect.H2Dialect
+    open-in-view: false
+  h2:
+    console.enabled: true
+    console.path: /h2-console
+    console.settings.trace: false
+    console.settings.web-allow-others: false
