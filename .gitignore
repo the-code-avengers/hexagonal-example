@@ -39,3 +39,10 @@ build/
 .java-version
 *.bak
 */out/*
+*/.gradle/*
+gradle/
+gradlew
+gradlew.*
+*/gradle/*
+*/gradlew/*
+*/gradlew.*/*
