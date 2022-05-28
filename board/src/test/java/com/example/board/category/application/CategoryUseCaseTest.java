@@ -1,6 +1,6 @@
 package com.example.board.category.application;
 
-import com.example.board.category.adapter.in.web.CategoryResponse;
+import com.example.board.category.adapter.in.web.CategoryResponseDTO;
 import com.example.board.category.application.port.in.CategoryUseCase;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -20,7 +20,7 @@ class CategoryUseCaseTest {
     @Test
     void createUseCase() {
         final String 테스트카테고리 = "테스트카테고리";
-        final CategoryResponse createdCategoryResponse = categoryUseCase.createUseCase(테스트카테고리);
-        assertThat(createdCategoryResponse).isEqualTo(new CategoryResponse(1L, 테스트카테고리));
+        final CategoryResponseDTO createdCategoryResponseDTO = categoryUseCase.createUseCase(테스트카테고리);
+        assertThat(createdCategoryResponseDTO).isEqualTo(new CategoryResponseDTO(1L, 테스트카테고리));
     }
 }

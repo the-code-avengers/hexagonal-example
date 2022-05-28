@@ -1,6 +1,6 @@
 package com.example.board.category.application;
 
-import com.example.board.category.adapter.in.web.CategoryResponse;
+import com.example.board.category.adapter.in.web.CategoryResponseDTO;
 import com.example.board.category.adapter.out.persistence.CategoryEntity;
 import com.example.board.category.application.port.in.CategoryUseCase;
 import com.example.board.category.application.port.out.LoadCategoryPort;
@@ -19,7 +19,7 @@ public class CategoryService implements CategoryUseCase {
     }
 
     @Override
-    public CategoryResponse createUseCase(String categoryName) {
+    public CategoryResponseDTO createUseCase(String categoryName) {
         Category category = new Category(categoryName);
         final CategoryEntity categoryEntity = this.toCategoryEntity(category);
 
@@ -27,9 +27,9 @@ public class CategoryService implements CategoryUseCase {
         return this.toCategoryResponse(savedCategory);
     }
 
-    private CategoryResponse toCategoryResponse(CategoryEntity categoryEntity) {
-        return new CategoryResponse(categoryEntity.getId(),
-                                    categoryEntity.getName());
+    private CategoryResponseDTO toCategoryResponse(CategoryEntity categoryEntity) {
+        return new CategoryResponseDTO(categoryEntity.getId(),
+                                       categoryEntity.getName());
     }
 
     private CategoryEntity toCategoryEntity(Category category) {

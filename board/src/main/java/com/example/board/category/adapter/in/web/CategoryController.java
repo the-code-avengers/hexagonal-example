@@ -1,14 +1,13 @@
 package com.example.board.category.adapter.in.web;
 
 import com.example.board.category.application.port.in.CategoryUseCase;
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-@RestController
+import java.time.LocalDateTime;
+
+@RestController("/categories")
 public class CategoryController {
 
     private final CategoryUseCase categoryUseCase;
@@ -17,10 +16,15 @@ public class CategoryController {
         this.categoryUseCase = categoryUseCase;
     }
 
-    @PostMapping
-    public ResponseEntity<?> createCategory(@RequestBody CategoryRequest categoryRequest) {
-        categoryUseCase.createUseCase(categoryRequest.getName());
-        return new ResponseEntity<CategoryResponse>(HttpStatus.OK);
+    @GetMapping("/health-check")
+    public String healthCheck() {
+        return LocalDateTime.now().toString();
+    }
+
+    @PostMapping("/abc")
+    public ResponseEntity<?> createCategory(@RequestBody CategoryRequestDTO categoryRequestDTO) {
+        categoryUseCase.createUseCase(categoryRequestDTO.getName());
+        return new ResponseEntity<CategoryResponseDTO>(HttpStatus.CREATED);
     }
 
 }

@@ -11,6 +11,7 @@ dependencies {
     implementation project(':core')
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'io.rest-assured:rest-assured'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
