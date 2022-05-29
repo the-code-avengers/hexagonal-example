@@ -8,19 +8,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.category.adapter.in.web.link.CreateCategory;
-import com.example.category.application.CategoryService;
+import com.example.category.application.port.in.AddCategoryUseCase;
 
 @RestController
 @RequestMapping("/categories")
 public class CategoryController {
-	final CategoryService categoryService;
+	final AddCategoryUseCase addCategoryUseCase;
 
-	public CategoryController(CategoryService categoryService) {
-		this.categoryService = categoryService;
+	public CategoryController( AddCategoryUseCase addCategoryUseCase) {
+		this.addCategoryUseCase = addCategoryUseCase;
 	}
 
 	@PostMapping
 	public CreateCategory.Response createSample(@Valid @RequestBody CreateCategory.Request request) {
-		return this.categoryService.save(request.name());
+		return this.addCategoryUseCase.add(request.name());
 	}
 }
