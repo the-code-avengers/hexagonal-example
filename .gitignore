@@ -67,3 +67,4 @@ gradle-app.setting
 .gradletasknamecache
 
 .env
+.envrc
