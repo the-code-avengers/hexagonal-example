@@ -23,9 +23,15 @@ public class CategoryController {
     }
 
     @PostMapping
-    public ResponseEntity<?> createCategory(@RequestBody CategoryRequestDTO categoryRequestDTO) {
-        categoryUseCase.createUseCase(categoryRequestDTO.getName());
-        return new ResponseEntity<CategoryResponseDTO>(HttpStatus.CREATED);
+    public ResponseEntity<CategoryResponseDTO> createCategory(@RequestBody CategoryRequestDTO categoryRequestDTO) {
+        final CategoryResponseDTO response = categoryUseCase.createUseCase(categoryRequestDTO.getName());
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteCategory(@PathVariable(name = "id") Long categoryId) {
+        categoryUseCase.deleteUseCase(categoryId);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 }

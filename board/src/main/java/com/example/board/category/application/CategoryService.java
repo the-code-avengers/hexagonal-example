@@ -27,6 +27,13 @@ public class CategoryService implements CategoryUseCase {
         return this.toCategoryResponse(savedCategory);
     }
 
+    @Override
+    public Long deleteUseCase(Long categoryId) {
+        CategoryEntity loadCategory = loadCategoryPort.loadCategory(categoryId);
+        loadCategoryPort.deleteCategory(loadCategory);
+        return loadCategory.getId();
+    }
+
     private CategoryResponseDTO toCategoryResponse(CategoryEntity categoryEntity) {
         return new CategoryResponseDTO(categoryEntity.getId(),
                                        categoryEntity.getName());

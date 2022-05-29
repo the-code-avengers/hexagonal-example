@@ -8,11 +8,14 @@ jar {
 
 
 dependencies {
+    implementation 'android.arch.persistence.room:runtime:1.1.1'
     implementation project(':core')
 
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation group: 'com.google.guava', name: 'guava', version: '31.1-jre'
     testImplementation 'io.rest-assured:rest-assured'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
 }
 
 tasks.named('test') {
