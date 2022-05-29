@@ -22,7 +22,7 @@ public class CategoryController {
         return LocalDateTime.now().toString();
     }
 
-    @PostMapping("/abc")
+    @PostMapping
     public ResponseEntity<?> createCategory(@RequestBody CategoryRequestDTO categoryRequestDTO) {
         categoryUseCase.createUseCase(categoryRequestDTO.getName());
         return new ResponseEntity<CategoryResponseDTO>(HttpStatus.CREATED);
