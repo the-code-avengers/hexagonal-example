@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
 
-@RestController("/categories")
+@RestController
+@RequestMapping("/categories")
 public class CategoryController {
 
     private final CategoryUseCase categoryUseCase;
