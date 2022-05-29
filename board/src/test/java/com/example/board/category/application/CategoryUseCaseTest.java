@@ -24,7 +24,7 @@ class CategoryUseCaseTest extends AcceptanceTest {
     void createUseCase() {
         final String 테스트카테고리 = "테스트카테고리";
         final CategoryResponseDTO createdCategoryResponseDTO = categoryUseCase.createUseCase(테스트카테고리);
-        assertThat(createdCategoryResponseDTO).isEqualTo(new CategoryResponseDTO(1L, 테스트카테고리));
+        assertThat(createdCategoryResponseDTO.getName()).isEqualTo(테스트카테고리);
     }
 
     @DisplayName("카테고리 삭제 UseCase 테스트")
@@ -37,6 +37,17 @@ class CategoryUseCaseTest extends AcceptanceTest {
 
         assertThrows(RuntimeException.class, () ->
                 loadCategoryPort.loadCategory(id)
+        );
+    }
+
+    @DisplayName("카테고리 생성 중복 테스트")
+    @Test
+    void duplicateTest() {
+        final String 테스트카테고리 = "테스트카테고리";
+        categoryUseCase.createUseCase(테스트카테고리);
+
+        assertThrows(RuntimeException.class, () ->
+                categoryUseCase.createUseCase(테스트카테고리)
         );
     }
 }

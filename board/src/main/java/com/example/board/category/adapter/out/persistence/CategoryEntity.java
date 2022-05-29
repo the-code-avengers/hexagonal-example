@@ -1,9 +1,14 @@
 package com.example.board.category.adapter.out.persistence;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
 import javax.persistence.*;
 
 @Entity(name = "category")
 @Table(name = "category")
+@ToString
+@EqualsAndHashCode
 public class CategoryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

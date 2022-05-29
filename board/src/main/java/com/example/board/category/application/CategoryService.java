@@ -20,6 +20,10 @@ public class CategoryService implements CategoryUseCase {
 
     @Override
     public CategoryResponseDTO createUseCase(String categoryName) {
+        if (loadCategoryPort.loadCategory(categoryName).isPresent()) {
+            throw new RuntimeException(String.format("이미 존재하는 카테고리 이름입니다 (%s)", categoryName));
+        }
+
         Category category = new Category(categoryName);
         final CategoryEntity categoryEntity = this.toCategoryEntity(category);
 
