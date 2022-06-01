@@ -32,15 +32,22 @@ subprojects {
 
     dependencies {
         testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.8.2'
+        api 'org.springframework.boot:spring-boot-starter'
+        implementation 'org.springframework.boot:spring-boot-starter-web'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+        implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+        api 'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok'
+        runtimeOnly 'com.h2database:h2'
     }
 
     test {
         useJUnitPlatform()
     }
 }
-
-project(':comment') {
-    dependencies {
-        api project(':core')
-    }
-}
+//
+//project(':application') {
+//    dependencies {
+//        api project(':core')
+//    }
+//}

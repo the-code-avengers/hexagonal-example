@@ -1,4 +1,5 @@
 rootProject.name = 'hexagonal-example'
 
 include 'core'
-include 'comment'
+include 'application'
+include 'category'

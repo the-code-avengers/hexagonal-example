@@ -1,0 +1,18 @@
+bootJar {
+    enabled = false
+}
+
+jar {
+    enabled = true
+}
+
+
+dependencies {
+    implementation project(':category')
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+
