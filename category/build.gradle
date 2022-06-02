@@ -9,6 +9,7 @@ jar {
 
 dependencies {
     implementation project(':core')
+    annotationProcessor project(':core')
 }
 
 tasks.named('test') {
