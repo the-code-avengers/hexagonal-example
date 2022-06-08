@@ -6,13 +6,11 @@ jar {
     enabled = true
 }
 
-
 dependencies {
     implementation project(':category')
+    implementation project(':core')
 }
 
 tasks.named('test') {
 	useJUnitPlatform()
 }
-
-
