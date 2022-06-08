@@ -43,9 +43,3 @@ subprojects {
         useJUnitPlatform()
     }
 }
-//
-//project(':application') {
-//    dependencies {
-//        api project(':core')
-//    }
-//}
