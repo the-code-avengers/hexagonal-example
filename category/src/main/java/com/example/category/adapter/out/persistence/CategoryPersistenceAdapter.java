@@ -1,12 +1,11 @@
 package com.example.category.adapter.out.persistence;
 
-import com.example.category.application.port.out.CreateCategoryPort;
-import com.example.category.application.port.out.FindCategoryPort;
+import com.example.category.application.port.out.CategoryPort;
 import com.example.category.domain.Category;
 import org.springframework.stereotype.Component;
 
 @Component
-public class CategoryPersistenceAdapter implements CreateCategoryPort, FindCategoryPort {
+public class CategoryPersistenceAdapter implements CategoryPort {
 
     private final CategoryRepository categoryRepository;
 
