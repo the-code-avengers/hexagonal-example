@@ -1,7 +1,10 @@
 package com.example.category.adapter.in.web;
 
+import javax.validation.constraints.NotBlank;
+
 public class CreateCategoryRequest {
 
+    @NotBlank
     private String name;
 
     public CreateCategoryRequest() {

@@ -3,7 +3,7 @@ package com.example.category.adapter.in.web;
 import com.example.category.application.port.in.CreateCategoryUseCase;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDateTime;
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/categories")
@@ -15,13 +15,13 @@ public class CategoryController {
         this.createCategoryUseCase = createCategoryUseCase;
     }
 
-    @GetMapping("/test")
-    public String healthCheck() {
-        return LocalDateTime.now().toString();
+    @PostMapping
+    public CategoryResponse create(@Valid @RequestBody CreateCategoryRequest request) {
+        return this.createCategoryUseCase.create(request.getName());
     }
 
-    @PostMapping
-    public CategoryResponse create(@RequestBody CreateCategoryRequest request) {
-        return this.createCategoryUseCase.create(request.getName());
+    @DeleteMapping("/{id}")
+    public CategoryResponse delete(@PathVariable Long id) {
+        return this.createCategoryUseCase.delete(id);
     }
 }

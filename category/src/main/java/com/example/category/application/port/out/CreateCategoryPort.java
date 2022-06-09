@@ -4,5 +4,7 @@ import com.example.category.domain.Category;
 
 public interface CreateCategoryPort {
 
-    Category createCategory(Category category);
+    Category create(Category category);
+
+    Category delete(Long id);
 }
