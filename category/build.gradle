@@ -1,0 +1,16 @@
+bootJar {
+    enabled = false
+}
+
+jar {
+    enabled = true
+}
+
+dependencies {
+    implementation project(':core')
+    annotationProcessor project(':core')
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
